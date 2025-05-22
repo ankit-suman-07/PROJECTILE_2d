@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://bugvynxjjikmr"]
+
+[ext_resource type="Script" uid="uid://c788nneyg5gu3" path="res://script/game_over.gd" id="1_wqhvx"]
+[ext_resource type="FontFile" uid="uid://diu6xu0gp2tjw" path="res://assets/chonky_bunny/Chonky Bunny.ttf" id="1_xeevv"]
+
+[node name="game-over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wqhvx")
+
+[node name="scoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -76.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_xeevv")
+theme_override_font_sizes/font_size = 28
+text = "Your score is "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="gameOverLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 192.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_xeevv")
+theme_override_font_sizes/font_size = 72
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = 60.0
+offset_right = 96.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.909804, 0.811765, 0.117647, 1)
+theme_override_fonts/font = ExtResource("1_xeevv")
+theme_override_font_sizes/font_size = 32
+text = "Play Again"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.909804, 0.811765, 0.117647, 1)
+theme_override_fonts/font = ExtResource("1_xeevv")
+theme_override_font_sizes/font_size = 32
+text = "Exit"
