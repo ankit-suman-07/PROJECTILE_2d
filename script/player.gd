@@ -26,6 +26,7 @@ func _process(delta):
 func shoot():
 	if bullet_scene:
 		var bullet = bullet_scene.instantiate()
+		print(bullet.name)
 		var spawn_point = $BulletSpawnPoint.global_position
 		var direction = Vector2.UP.rotated(global_rotation)  # Shoot in the facing direction
 

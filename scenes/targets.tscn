@@ -1,17 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://duvl7j8sfvyng"]
+[gd_scene load_steps=3 format=3 uid="uid://duvl7j8sfvyng"]
+
+[ext_resource type="Script" uid="uid://bgy1ujmqohxoc" path="res://script/targets.gd" id="1_kese5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4k1k3"]
-size = Vector2(32, 16)
+size = Vector2(64, 16)
 
-[node name="targets" type="RigidBody2D"]
+[node name="targets" type="RigidBody2D" groups=["targets"]]
 mass = 0.5
 gravity_scale = 0.2
+script = ExtResource("1_kese5")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -16.0
+offset_left = -32.0
 offset_top = -8.0
-offset_right = 16.0
+offset_right = 32.0
 offset_bottom = 8.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4k1k3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
