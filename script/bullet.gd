@@ -31,5 +31,6 @@ func _physics_process(delta):
 		if collision.get_collider().is_in_group("targets"):
 			has_collided = true
 			score += 1
-			print("crash : " + str(score))
+			Global.score += score
+			print("crash : " + str(Global.score))
 			$Crash.play()
