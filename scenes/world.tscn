@@ -9,4 +9,5 @@
 position = Vector2(0, 608)
 
 [node name="player" parent="." instance=ExtResource("2_rwgxs")]
-position = Vector2(576, 552)
+position = Vector2(576, 584)
+rotation = 0.00476593

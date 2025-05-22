@@ -1,12 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://clqc7tfkblrmt"]
+[gd_scene load_steps=6 format=3 uid="uid://clqc7tfkblrmt"]
 
 [ext_resource type="Script" uid="uid://b83v4pa31g2pu" path="res://script/player.gd" id="1_3vyb7"]
+[ext_resource type="PackedScene" uid="uid://bjyd3sgrlskbu" path="res://scenes/bullet.tscn" id="2_g2els"]
+[ext_resource type="AudioStream" uid="uid://o0n5lgawv2c2" path="res://assets/mixkit-game-ball-tap-2073.wav" id="3_qhqgy"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_u8vuu"]
-radius = 24.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
+size = Vector2(16, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3vyb7"]
+radius = 24.0208
 
 [node name="player" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_3vyb7")
+bullet_scene = ExtResource("2_g2els")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -24.0
@@ -21,4 +28,15 @@ offset_right = 8.0
 offset_bottom = -24.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_u8vuu")
+position = Vector2(0, -38)
+shape = SubResource("RectangleShape2D_3vyb7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3vyb7")
+
+[node name="BulletSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(0, -40)
+rotation = -1.5757
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qhqgy")
