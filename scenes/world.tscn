@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://85uny1t30w80"]
+[gd_scene load_steps=5 format=3 uid="uid://85uny1t30w80"]
 
+[ext_resource type="Script" uid="uid://bilw0fyo47m8m" path="res://script/world.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://cb2j3mkfn6y2y" path="res://scenes/floor.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://duvl7j8sfvyng" path="res://scenes/targets.tscn" id="2_k0juu"]
 [ext_resource type="PackedScene" uid="uid://clqc7tfkblrmt" path="res://scenes/player.tscn" id="2_rwgxs"]
 
 [node name="world" type="Node2D"]
+script = ExtResource("1_4wyf3")
+target_scene = ExtResource("2_k0juu")
 
 [node name="floor" parent="." instance=ExtResource("1_nnsk1")]
 position = Vector2(0, 608)
@@ -11,3 +15,77 @@ position = Vector2(0, 608)
 [node name="player" parent="." instance=ExtResource("2_rwgxs")]
 position = Vector2(576, 584)
 rotation = 0.00476593
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="TargetMarkers" type="Node" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="TargetMarkers"]
+position = Vector2(64, 0)
+gizmo_extents = 50.0
+
+[node name="Marker2D2" type="Marker2D" parent="TargetMarkers"]
+position = Vector2(128, 0)
+gizmo_extents = 50.0
+
+[node name="Marker2D3" type="Marker2D" parent="TargetMarkers"]
+position = Vector2(192, 0)
+gizmo_extents = 50.0
+
+[node name="Marker2D4" type="Marker2D" parent="TargetMarkers"]
+position = Vector2(256, 0)
+gizmo_extents = 50.0
+
+[node name="Marker2D5" type="Marker2D" parent="TargetMarkers"]
+position = Vector2(320, 0)
+gizmo_extents = 50.0
+
+[node name="Marker2D6" type="Marker2D" parent="TargetMarkers"]
+position = Vector2(384, 0)
+gizmo_extents = 50.0
+
+[node name="Marker2D7" type="Marker2D" parent="TargetMarkers"]
+position = Vector2(448, 0)
+gizmo_extents = 50.0
+
+[node name="Marker2D8" type="Marker2D" parent="TargetMarkers"]
+position = Vector2(512, 0)
+gizmo_extents = 50.0
+
+[node name="Marker2D9" type="Marker2D" parent="TargetMarkers"]
+position = Vector2(576, 0)
+gizmo_extents = 50.0
+
+[node name="Marker2D10" type="Marker2D" parent="TargetMarkers"]
+position = Vector2(640, 0)
+gizmo_extents = 50.0
+
+[node name="Marker2D11" type="Marker2D" parent="TargetMarkers"]
+position = Vector2(704, 0)
+gizmo_extents = 50.0
+
+[node name="Marker2D12" type="Marker2D" parent="TargetMarkers"]
+position = Vector2(768, 0)
+gizmo_extents = 50.0
+
+[node name="Marker2D13" type="Marker2D" parent="TargetMarkers"]
+position = Vector2(832, 0)
+gizmo_extents = 50.0
+
+[node name="Marker2D14" type="Marker2D" parent="TargetMarkers"]
+position = Vector2(896, 0)
+gizmo_extents = 50.0
+
+[node name="Marker2D15" type="Marker2D" parent="TargetMarkers"]
+position = Vector2(960, 0)
+gizmo_extents = 50.0
+
+[node name="Marker2D16" type="Marker2D" parent="TargetMarkers"]
+position = Vector2(1024, 0)
+gizmo_extents = 50.0
+
+[node name="Marker2D17" type="Marker2D" parent="TargetMarkers"]
+position = Vector2(1088, 0)
+gizmo_extents = 50.0

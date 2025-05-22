@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export var speed := 600.0
+@export var speed := 800.0
 var direction := Vector2.ZERO
 
 func initialize(dir: Vector2):

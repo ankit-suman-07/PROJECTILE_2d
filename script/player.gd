@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const ROTATION_SPEED := 90.0  # degrees per second
+const ROTATION_SPEED := 150.0  # degrees per second
 const GRAVITY := 1200.0       # pixels per second squared
 const MIN_ROTATION := -60.0   # Left rotation limit
 const MAX_ROTATION := 60.0    # Right rotation limit
