@@ -7,9 +7,6 @@ const MAX_ROTATION := 60.0    # Right rotation limit
 
 @export var bullet_scene: PackedScene
 
-#func _physics_process(delta):
-	#velocity.y += GRAVITY * delta
-	#move_and_slide()
 
 func _process(delta):
 	if Input.is_action_pressed("left"):

@@ -1,15 +1,3 @@
-#extends CharacterBody2D
-#class_name Bullet
-#
-#@export var speed := 800.0
-#var direction := Vector2.ZERO
-#
-#func initialize(dir: Vector2):
-	#direction = dir
-#
-#func _physics_process(delta):
-	#position += direction * speed * delta
-
 extends CharacterBody2D
 class_name Bullet
 
