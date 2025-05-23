@@ -15,7 +15,7 @@ offset_left = -32.0
 offset_top = -16.0
 offset_right = 32.0
 offset_bottom = 16.0
-color = Color(1, 0.219608, 1, 1)
+color = Color(1, 0.435294, 0.380392, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xoryo")
