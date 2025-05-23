@@ -9,6 +9,7 @@ const MAX_ROTATION := 60.0    # Right rotation limit
 
 
 func _process(delta):
+	
 	if Input.is_action_pressed("left"):
 		rotation_degrees -= ROTATION_SPEED * delta
 	elif Input.is_action_pressed("right"):
@@ -19,11 +20,21 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("shoot"):  # Ensure "shoot" is mapped to "x"
 		shoot()
+		
 
 func shoot():
 	if bullet_scene:
 		var bullet = bullet_scene.instantiate()
 		print(bullet.name)
+		Global.bullet -= 1
+		if Global.bullet <= 0:
+			#var gameOverScoreLabel = get_parent().get_node("./game-over/scoreLabel")
+			#gameOverScoreLabel.text = "Your Score is " + str(Global.score)
+			get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+			print("Game Over!!!")
+			return
+		var bulletCount = get_parent().get_node("BulletCountLabel")
+		bulletCount.text = "Bullets left : " + str(Global.bullet)
 		var spawn_point = $BulletSpawnPoint.global_position
 		var direction = Vector2.UP.rotated(global_rotation)  # Shoot in the facing direction
 

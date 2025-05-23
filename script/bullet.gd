@@ -9,8 +9,11 @@ var has_collided := false  # Flag to ensure we print only once
 
 func initialize(dir: Vector2):
 	direction = dir.normalized()
+	
+	print(Global.bullet)
 
 func _physics_process(delta):
+	
 	var collision = move_and_collide(direction * speed * delta)
 	if has_collided:
 		return
@@ -20,5 +23,7 @@ func _physics_process(delta):
 			has_collided = true
 			score += 1
 			Global.score += score
+			var label = get_parent().get_node("Score")
+			label.text = "Score : " + str(Global.score)
 			print("crash : " + str(Global.score))
 			$Crash.play()

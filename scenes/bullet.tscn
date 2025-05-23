@@ -8,6 +8,7 @@ radius = 8.0
 
 [node name="bullet" type="CharacterBody2D" groups=["bullets"]]
 script = ExtResource("1_mkf8s")
+speed = 1000.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -8.0
