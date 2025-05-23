@@ -7,6 +7,9 @@ const MAX_ROTATION := 60.0    # Right rotation limit
 
 @export var bullet_scene: PackedScene
 
+func _ready() -> void:
+	var line = $Line2D
+	line.default_color = Color.html(Global.color)  # Golden yellow
 
 func _process(delta):
 	
