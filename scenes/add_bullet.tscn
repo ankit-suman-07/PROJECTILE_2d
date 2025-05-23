@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpiwi1gta542f"]
+
+[ext_resource type="Script" uid="uid://8w7ifyyilywu" path="res://script/add_bullet.gd" id="1_0hbxd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xoryo"]
+size = Vector2(64, 32)
+
+[node name="add_bullet" type="RigidBody2D" groups=["add_bullets"]]
+mass = 0.5
+gravity_scale = 0.2
+script = ExtResource("1_0hbxd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -32.0
+offset_top = -16.0
+offset_right = 32.0
+offset_bottom = 16.0
+color = Color(1, 0.219608, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xoryo")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = -32.0
+offset_top = -16.0
+offset_right = 32.0
+offset_bottom = 16.0
+text = "+10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

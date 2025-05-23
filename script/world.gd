@@ -1,6 +1,8 @@
 extends Node2D
 
 @export var target_scene: PackedScene
+@export var add_bullet_scene: PackedScene
+
 var markers := []
 
 func _ready():
@@ -12,6 +14,7 @@ func _ready():
 			markers.append(child)
 
 	$Timer.timeout.connect(_on_timer_timeout)
+	$TimerAddBullet.timeout.connect(_on_timer_timeout_add_bullet)
 	
 func _process(delta: float) -> void:
 	if Global.bullet <= 0:
@@ -25,3 +28,16 @@ func _on_timer_timeout():
 		print(bullet.name)
 		bullet.global_position = marker.global_position
 		get_tree().current_scene.add_child(bullet)
+
+func _on_timer_timeout_add_bullet():
+	if add_bullet_scene and markers.size() > 0:
+		var marker = markers[randi() % markers.size()]
+		var bullet = add_bullet_scene.instantiate()
+		print(bullet.name)
+		bullet.global_position = marker.global_position
+		get_tree().current_scene.add_child(bullet)
+	
+
+
+func _on_gravity_increment_timer_timeout() -> void:
+	Global.gravity += 0.05
