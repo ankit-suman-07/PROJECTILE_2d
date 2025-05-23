@@ -1,0 +1,111 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmilt37ghug5s"]
+
+[ext_resource type="FontFile" uid="uid://diu6xu0gp2tjw" path="res://assets/chonky_bunny/Chonky Bunny.ttf" id="1_5p55f"]
+[ext_resource type="Script" uid="uid://cscu5b271d1wc" path="res://script/control.gd" id="1_r67kn"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r67kn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 192.0
+offset_right = 512.0
+offset_bottom = 512.0
+alignment = 1
+
+[node name="LeftMove" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_5p55f")
+theme_override_font_sizes/font_size = 28
+text = "Move Left"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="RightMove" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_5p55f")
+theme_override_font_sizes/font_size = 28
+text = "Move Right"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Shoot" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_5p55f")
+theme_override_font_sizes/font_size = 28
+text = "Shoot"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 192.0
+offset_right = 1152.0
+offset_bottom = 512.0
+alignment = 1
+
+[node name="LeftMove" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_5p55f")
+theme_override_font_sizes/font_size = 28
+text = "A  or  ←"
+vertical_alignment = 1
+
+[node name="RightMove" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_5p55f")
+theme_override_font_sizes/font_size = 28
+text = "D  or  →"
+vertical_alignment = 1
+
+[node name="Shoot" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_5p55f")
+theme_override_font_sizes/font_size = 28
+text = "Space"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 224.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_5p55f")
+theme_override_font_sizes/font_size = 48
+text = "Controls"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.5
+offset_top = -136.0
+offset_right = 50.5
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_5p55f")
+theme_override_font_sizes/font_size = 28
+text = "Main Meu
+"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
